@@ -2,8 +2,21 @@
 function generate(command_list){
     let cmd_text = document.getElementById("cmd_text");
     let target = document.getElementById("input_target").value;
+    let item = document.getElementById("input_item_id").value;
+    let data = document.getElementById("input_item_data").value;
+    // let nbt = document.getElementById("input_item_nbt").value;
+    let count = document.getElementById("input_item_count").value;
     if (target == "") target = "@s";
-    cmd_text.innerHTML = "kill " + target;
+    if (item == ""){
+        cmd_text.innerHTML = "clear " + target;
+    }else{
+        if (data == "") data = 0;
+        if (count == ""){
+            cmd_text.innerHTML = "clear " + target + " " + item + " " + data;
+        }else{
+            cmd_text.innerHTML = "clear " + target + " " + item + " " + data + " " + count;
+        }
+    }
 }
 
 //複製

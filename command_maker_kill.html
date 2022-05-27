@@ -16,27 +16,29 @@
     </head>
     <body>
         <header>
-            <div class="container">
-                <nav class="navbar navbar-expand-lg navbar-light">
-                    <a class="navbar-brand" href="#">
-                        <img src="pictures/icon.png" style="height : 5%;width: 5%;">
-                    </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                    </button>
-                
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                        <a class="nav-link Changa" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link Noto-Sans-TC" href="https://omlet.gg/profile/lll090407" target="_blank">作者OM頁</a>
-                        </li>
-                    </ul>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <a class="navbar-brand" href="index.html">
+                            <img src="pictures/icon.png" alt="" width="30px">
+                        </a>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active">
+                                <a class="nav-link Changa" href="index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link Noto-Sans-TC" href="https://omlet.gg/profile/lll090407" target="_blank">作者OM頁</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </nav>
-            </div>
+                </div>
+            </nav>
         </header>
         <div class="jumbotron">
             <div class="container">
@@ -54,8 +56,8 @@
                 <h7 class="from-title">用於殺死實體</h4>
                 <div class="input_from">
                     <div class="target">
-                        <p style="font-size: 20px; margin: 10px; font-weight: Noto Sans TC;">目標選擇器:</p>
-                        <input class="input" type="text" id="input_target">
+                        <p class="from_big_title">目標選擇器:</p>
+                        <input class="input" type="text" id="input_target" value="@s">
                     </div>
                 </div>
                 <div class="out_from">
@@ -64,7 +66,7 @@
                         <input type="button" value="複製" class="buttom" onclick="copy('cmd_text')">
                     </div>
                     <div class="command">
-                        <p style="font-size: 20px; margin: 10px; font-weight: Noto Sans TC;">指令:</p>
+                        <p class="from_big_title">指令:</p>
                         <p class="cmd_text" id="cmd_text">kill @s</p>
                     </div>
                 </div>

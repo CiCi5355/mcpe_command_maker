@@ -7,6 +7,7 @@
 }
 
 .function_botton{
+    display: inline;
     font-family:Noto Sans TC ;
     background-color: rgb(255, 248, 37);
     width: 200px;
@@ -53,7 +54,7 @@
     background-color: rgb(214, 214, 214);
     padding: 10px;
     border-radius: 10px;
-    width: 80%;
+    width: 70%;
     margin: 10px;
 }
 
@@ -62,4 +63,54 @@
     padding: 6px;
     border-radius: 10px;
     margin-top: 1%;
+}
+
+.item {
+    background-color:rgba(246, 255, 123, 0.779);
+    padding: 6px;
+    border-radius: 10px;
+    margin-top: 1%;
+}
+
+.from_sm_title {
+    font-size: 18px;
+    margin: 10px;
+    font-weight: Noto Sans TC;
+    display: inline;
+}
+
+.from_big_title {
+    font-size: 20px;
+    margin: 10px;
+    font-weight: Noto Sans TC;
+}
+
+.xyz {
+    background-color:rgba(246, 255, 123, 0.779);
+    padding: 6px;
+    border-radius: 10px;
+    margin-top: 1%;
+}
+
+.block {
+    background-color:rgba(246, 255, 123, 0.779);
+    padding: 6px;
+    border-radius: 10px;
+    margin-top: 1%;
+}
+
+.model {
+    background-color:rgba(246, 255, 123, 0.779);
+    padding: 6px;
+    border-radius: 10px;
+    margin-top: 1%;
+}
+
+.change {
+    font-family:Noto Sans TC ;
+    background-color: rgb(214, 214, 214);
+    padding: 10px;
+    border-radius: 10px;
+    width: 70%;
+    margin: 10px;
 }
