@@ -10,9 +10,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Changa:wght@300&family=Noto+Sans+TC&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
-        <script src="command_maker_js/clear.js"></script>
+        <script src="command_maker_js/item_nbt.js"></script>
         <link rel="icon" href="pictures/page_icon.ico">
-        <title>指令生成 => Clear</title>
+        <title>功能生成 => 物品NBT</title>
     </head>
     <body>
         <header>
@@ -52,26 +52,33 @@
         </div>
         <div class="from">
             <div class="container">
-                <h2 class="from-title">Clear 清除</h2>
-                <h7 class="from-title">清除目標的物品</h4>
+                <h2 class="from-title">物品NBT</h2>
+                <h7 class="from-title">設定物品屬性</h4>
                 <div class="input_from">
-                    <div class="target">
-                        <p class="from_big_title">目標選擇器:</p>
-                        <input class="input" type="text" id="input_target" value="@s">
+                    <div class="adv">
+                        <p class="from_big_title">冒險設定(方塊ID,用逗號區隔):</p>
+                        <div>
+                            <p class="from_sm_title">可放置</p>
+                            <input class="input" type="text" id="input_can_place">
+                        </div>
+                        <div>
+                            <p class="from_sm_title">可破壞</p>
+                            <input class="input" type="text" id="input_can_destroy">
+                        </div>
                     </div>
-                    <div class="item">
-                        <p class="from_big_title">物品(不填預設為清空):</p>
+                    <div class="back">
+                        <p class="from_big_title">背包設定:</p>
                         <div>
-                            <p class="from_sm_title">ID</p>
-                            <input class="input" type="text" id="input_item_id">
+                            <input type="checkbox" id="no_drop" value="no" onclick="set_no_drop()" class="check_box">
+                            <p class="from_sm_title" style="display: inline;">死亡不掉落</p>
                         </div>
                         <div>
-                            <p class="from_sm_title">DATA</p>
-                            <input class="input" type="text" id="input_item_data" onkeyup="value=value.replace(/[^\d\-]/g,'')">
-                        </div>
-                        <div>
-                            <p class="from_sm_title">數量</p>
-                            <input class="input" type="text" id="input_item_count" oninput = "value=value.replace(/[^\d]/g,'')">
+                            <p class="from_sm_title">背包鎖定</p>
+                            <select class = "change" id="back_change" onchange="back_change()" style="display : inline;">
+                                <option value="no" selected>不鎖定</option>
+                                <option value="one">鎖於一格</option>
+                                <option value="back">鎖於背包</option>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -81,8 +88,8 @@
                         <input type="button" value="複製" class="buttom" onclick="copy('cmd_text')">
                     </div>
                     <div class="command">
-                        <p class="from_big_title">指令:</p>
-                        <p class="cmd_text" id="cmd_text">clear @s</p>
+                        <p class="from_big_title">NBT:</p>
+                        <p class="cmd_text" id="cmd_text">{}</p>
                     </div>
                 </div>
             </div>

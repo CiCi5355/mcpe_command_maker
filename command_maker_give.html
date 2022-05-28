@@ -60,7 +60,7 @@
                         <input class="input" type="text" id="input_target" value="@s">
                     </div>
                     <div class="item">
-                        <p class="from_big_title">物品:</p>
+                        <p class="from_big_title">物品(基礎):</p>
                         <div>
                             <p class="from_sm_title">ID</p>
                             <input class="input" type="text" id="input_item_id" value="apple">
@@ -70,12 +70,31 @@
                             <input class="input" type="text" id="input_item_data" onkeyup="value=value.replace(/[^\d\-]/g,'')">
                         </div>
                         <div>
-                            <p class="from_sm_title">NBT</p>
-                            <input class="input" type="text" id="input_item_nbt">
-                        </div>
-                        <div>
                             <p class="from_sm_title">數量</p>
                             <input class="input" type="text" id="input_item_count" oninput = "value=value.replace(/[^\d]/g,'')">
+                        </div>
+                    </div>
+                    <div class="item_nbt">
+                        <p class="from_big_title">物品NBT(可不填):</p>
+                        <div>
+                            <p class="from_sm_title">可放置</p>
+                            <input class="input" type="text" id="input_can_place">
+                        </div>
+                        <div>
+                            <p class="from_sm_title">可破壞</p>
+                            <input class="input" type="text" id="input_can_destroy">
+                        </div>
+                        <div>
+                            <input type="checkbox" id="no_drop" value="no" onclick="set_no_drop()" class="check_box">
+                            <p class="from_sm_title" style="display: inline;">死亡不掉落</p>
+                        </div>
+                        <div>
+                            <p class="from_sm_title">背包鎖定</p>
+                            <select class = "change" id="back_change" onchange="back_change()" style="display : inline;">
+                                <option value="no" selected>不鎖定</option>
+                                <option value="one">鎖於一格</option>
+                                <option value="back">鎖於背包</option>
+                            </select>
                         </div>
                     </div>
                 </div>

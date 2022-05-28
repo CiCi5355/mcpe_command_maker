@@ -2,14 +2,14 @@
 nbt_list = [];
 can_place = [];
 can_destroy = [];
-nbt_text = "";
 
-//nbt生成
-function nbt(){
+//生成
+function generate(command_list){
     nbt_list = [];
     can_place = [];
     can_destroy = [];
 
+    let cmd_text = document.getElementById("cmd_text");
     let no_drop = document.getElementById("no_drop").checked;
     let back_set = document.getElementById("back_change").value;
     let can_place_text = document.getElementById("input_can_place").value;
@@ -38,29 +38,7 @@ function nbt(){
         nbt_list.push('"minecraft:item_lock":{"mode":"lock_in_inventory"}')
     }
 
-    return("{" + nbt_list.toString() + "}");
-}
-
-//生成
-function generate(command_list){
-    let cmd_text = document.getElementById("cmd_text");
-    let target = document.getElementById("input_target").value;
-    let item = document.getElementById("input_item_id").value;
-    let data = document.getElementById("input_item_data").value;
-    let count = document.getElementById("input_item_count").value;
-
-    nbt_text = nbt();
-
-    if (target == "") target = "@s";
-    if (item == "") item = "apple";
-    if (count == "") count = "1";
-    if (data == "") data = "0";
-
-    if (nbt_text == "{}"){
-        cmd_text.innerHTML = "give " + target + " " + item + " " + count + " " + data;
-    }else{
-        cmd_text.innerHTML = "give " + target + " " + item + " " + count + " " + data + " " + nbt_text;
-    }
+    cmd_text.innerHTML = "{" + nbt_list.toString() + "}";
 }
 
 //複製
