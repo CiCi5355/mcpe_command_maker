@@ -5,3 +5,7 @@
 2021/5/28
 新增nbt功能
 擁有功能:claer,give,fill,kill,nbt生成
+
+2021/5/29
+新增enchant功能
+擁有功能:claer,give,fill,kill,nbt,enchant生成
