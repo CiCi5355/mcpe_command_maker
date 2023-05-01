@@ -21,13 +21,6 @@
     font-family:Noto Sans TC ;
 }
 
-.command {
-    background-color:rgba(246, 255, 123, 0.779);
-    padding: 6px;
-    border-radius: 10px;
-    margin-top: 1%;
-}
-
 .cmd_text {
     font-family:Changa ;
     font-size: 25px;
@@ -44,13 +37,6 @@
     padding: 10px;
 }
 
-.action {
-    background-color:rgba(246, 255, 123, 0.779);
-    padding: 6px;
-    border-radius: 10px;
-    margin-top: 1%;
-}
-
 .input {
     font-family:Changa ;
     background-color: rgb(214, 214, 214);
@@ -58,20 +44,6 @@
     border-radius: 10px;
     width: 70%;
     margin: 10px;
-}
-
-.target {
-    background-color:rgba(246, 255, 123, 0.779);
-    padding: 6px;
-    border-radius: 10px;
-    margin-top: 1%;
-}
-
-.item {
-    background-color:rgba(246, 255, 123, 0.779);
-    padding: 6px;
-    border-radius: 10px;
-    margin-top: 1%;
 }
 
 .from_sm_title {
@@ -87,27 +59,6 @@
     font-weight: Noto Sans TC;
 }
 
-.xyz {
-    background-color:rgba(246, 255, 123, 0.779);
-    padding: 6px;
-    border-radius: 10px;
-    margin-top: 1%;
-}
-
-.block {
-    background-color:rgba(246, 255, 123, 0.779);
-    padding: 6px;
-    border-radius: 10px;
-    margin-top: 1%;
-}
-
-.model {
-    background-color:rgba(246, 255, 123, 0.779);
-    padding: 6px;
-    border-radius: 10px;
-    margin-top: 1%;
-}
-
 .change {
     font-family:Noto Sans TC ;
     background-color: rgb(214, 214, 214);
@@ -117,32 +68,38 @@
     margin: 10px;
 }
 
-.adv {
-    background-color:rgba(246, 255, 123, 0.779);
-    padding: 6px;
-    border-radius: 10px;
-    margin-top: 1%;
-}
-
-.item_nbt {
-    background-color:rgba(246, 255, 123, 0.779);
-    padding: 6px;
-    border-radius: 10px;
-    margin-top: 1%;
-}
-
-.back {
-    background-color:rgba(246, 255, 123, 0.779);
-    padding: 6px;
-    border-radius: 10px;
-    margin-top: 1%;
-}
-
 .check_box {
     margin-left: 1%;
 }
 
-.enchant {
+.from {
+	margin-bottom: 1%;
+}
+
+/*
+參數組樣式
+黃框*/
+.parameter_group {
+    background-color:rgba(246, 255, 123, 0.779);
+    padding: 6px;
+    border-radius: 10px;
+    margin-top: 1%;
+}
+
+/*
+輸出結果操作框樣式
+黃框*/
+.action {
+    background-color:rgba(246, 255, 123, 0.779);
+    padding: 6px;
+    border-radius: 10px;
+    margin-top: 1%;
+}
+
+/*
+輸出文字框樣式
+黃框*/
+.command {
     background-color:rgba(246, 255, 123, 0.779);
     padding: 6px;
     border-radius: 10px;
