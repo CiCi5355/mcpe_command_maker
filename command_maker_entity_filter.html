@@ -10,7 +10,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Changa:wght@300&family=Noto+Sans+TC&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
-        <script src="command_maker_js/item_nbt.js"></script>
+        <script src="command_maker_js/entity_filter_page.js"></script>
         <link rel="icon" href="pictures/page_icon.ico">
         <title>功能生成 => 目標選擇器</title>
     </head>
@@ -32,7 +32,7 @@
                                 <a class="nav-link Changa" href="index.html">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                <a class="nav-link Noto-Sans-TC" href="https://omlet.gg/profile/lll090407" target="_blank">作者OM頁</a>
+                                <a class="nav-link Noto-Sans-TC" href="https://omlet.gg/profile/cicilove5455" target="_blank">作者OM頁</a>
                                 </li>
                             </ul>
                         </div>
@@ -58,80 +58,143 @@
 					<!-- @a -->
 					<div class="main_filter parameter_group">
 						<p class="from_sm_title">主選擇標準</p>
-						<select class = "change" id="main_filter_change" onchange="main_filter_change()" style="display : inline;">
-							<option value="@e" selected>@e</option>
-							<option value="@a">@a</option>
-							<option value="@p">@p</option>
-							<option value="@s">@s</option>
-							<option value="@r">@r</option>
-							<option value="@initiator">@initiator</option>
-						</select>
+						<div id="main_filter_layer">
+							<select class = "change" id="main_filter_change" onchange="main_filter_change()" style="display : inline;">
+								<option value="@e" selected>@e(所有實體)</option>
+								<option value="@a">@a(所有玩家)</option>
+								<option value="@p">@p(最近的玩家)</option>
+								<option value="@s">@s(自己)</option>
+								<option value="@r">@r(隨機玩家)</option>
+								<option value="@initiator">@initiator(npc互動玩家)</option>
+							</select>
+						</div>
 					</div>
+					<!-- tag,name,family -->
+					<div class="common parameter_group">
+						<input type="checkbox" id="common_layer_display" value="no" onclick="common_layer_display()" class="check_box">
+                        <p class="from_big_title" style="display: inline;">常用參數(可不填):</p>
+						<div id="common_layer">
+							<div>
+								<p class="from_sm_title">名稱(name)</p>
+								<input class="input" type="text" id="input_name">
+							</div>
+							<div>
+								<p class="from_sm_title">標籤(tag)(用逗號區隔)</p>
+								<input class="input" type="text" id="input_tags">
+							</div>
+							<div>
+								<p class="from_sm_title">家族(family)(用逗號區隔)</p>
+								<input class="input" type="text" id="input_familys">
+							</div>
+							<div>
+								<p class="from_sm_title">數量(c)</p>
+								<input class="input" type="text" id="input_count" onkeyup="value=value.replace(/[^\d\-]/g,'')">
+							</div>
+							<div>
+								<p class="from_sm_title">遊戲模式(m)</p>
+								<select class = "change" id="gameMode_change" onchange="gameMode_change()" style="display : inline;">
+									<option value="" selected>無</option>
+									<option value="creative">創造</option>
+									<option value="survival">生存</option>
+									<option value="adventure">冒險</option>
+									<option value="spectator">旁觀者</option>
+									<option value="default">預設</option>
+								</select>
+							</div>
+						</div>
+                    </div>
 					<!-- xyz -->
 					<div class="location parameter_group">
                         <p class="from_big_title">位置(可不填):</p>
-                        <div>
-                            <p class="from_sm_title">X(x)</p>
-                            <input class="input" type="text" id="input_x" onkeyup="value=value.replace(/[^\d\-]/g,'')">
-                        </div>
-                        <div>
-                            <p class="from_sm_title">Y(y)</p>
-                            <input class="input" type="text" id="input_y" onkeyup="value=value.replace(/[^\d\-]/g,'')">
-                        </div>
-						<div>
-                            <p class="from_sm_title">Z(z)</p>
-                            <input class="input" type="text" id="input_z" onkeyup="value=value.replace(/[^\d\-]/g,'')">
-                        </div>
+						<div id="location_layer">
+							<div>
+								<p class="from_sm_title">X(x)</p>
+								<input class="input" type="text" id="input_x" onkeyup="value=value.replace(/[^\d\-]/g,'')">
+							</div>
+							<div>
+								<p class="from_sm_title">Y(y)</p>
+								<input class="input" type="text" id="input_y" onkeyup="value=value.replace(/[^\d\-]/g,'')">
+							</div>
+							<div>
+								<p class="from_sm_title">Z(z)</p>
+								<input class="input" type="text" id="input_z" onkeyup="value=value.replace(/[^\d\-]/g,'')">
+							</div>
+						</div>
                     </div>
 					<!-- dx,dy,dz -->
 					<div class="spatial_range parameter_group">
                         <p class="from_big_title">空間範圍(可不填):</p>
-                        <div>
-                            <p class="from_sm_title">X延伸(dx)</p>
-                            <input class="input" type="text" id="input_dx" onkeyup="value=value.replace(/[^\d\-]/g,'')">
-                        </div>
-                        <div>
-                            <p class="from_sm_title">Y延伸(dy)</p>
-                            <input class="input" type="text" id="input_dy" onkeyup="value=value.replace(/[^\d\-]/g,'')">
-                        </div>
-						<div>
-                            <p class="from_sm_title">Z延伸(dz)</p>
-                            <input class="input" type="text" id="input_dz" onkeyup="value=value.replace(/[^\d\-]/g,'')">
-                        </div>
+						<div id="spatial_range_layer">
+							<div>
+								<p class="from_sm_title">X延伸(dx)</p>
+								<input class="input" type="text" id="input_dx" onkeyup="value=value.replace(/[^\d\-]/g,'')">
+							</div>
+							<div>
+								<p class="from_sm_title">Y延伸(dy)</p>
+								<input class="input" type="text" id="input_dy" onkeyup="value=value.replace(/[^\d\-]/g,'')">
+							</div>
+							<div>
+								<p class="from_sm_title">Z延伸(dz)</p>
+								<input class="input" type="text" id="input_dz" onkeyup="value=value.replace(/[^\d\-]/g,'')">
+							</div>
+						</div>
                     </div>
 					<!-- r,rm -->
                     <div class="distance parameter_group">
                         <p class="from_big_title">距離(可不填):</p>
-                        <div>
-                            <p class="from_sm_title">半徑內(r)</p>
-                            <input class="input" type="text" id="input_r" onkeyup="value=value.replace(/[^\d]/g,'')">
-                        </div>
-                        <div>
-                            <p class="from_sm_title">半徑外(rm)</p>
-                            <input class="input" type="text" id="input_rm" onkeyup="value=value.replace(/[^\d]/g,'')">
-                        </div>
+						<div id="distance_layer">
+							<div>
+								<p class="from_sm_title">半徑內(r)</p>
+								<input class="input" type="text" id="input_r" onkeyup="value=value.replace(/[^\d]/g,'')">
+							</div>
+							<div>
+								<p class="from_sm_title">半徑外(rm)</p>
+								<input class="input" type="text" id="input_rm" onkeyup="value=value.replace(/[^\d]/g,'')">
+							</div>
+						</div>
                     </div>
-                    <div class="back parameter_group">
-                        <p class="from_big_title">背包設定:</p>
-                        <div>
-                            <input type="checkbox" id="no_drop" value="no" onclick="set_no_drop()" class="check_box">
-                            <p class="from_sm_title" style="display: inline;">死亡不掉落</p>
-                        </div>
-                        <div>
-                            <p class="from_sm_title">背包鎖定</p>
-                            <select class = "change" id="back_change" onchange="back_change()" style="display : inline;">
-                                <option value="no" selected>不鎖定</option>
-                                <option value="one">鎖於一格</option>
-                                <option value="back">鎖於背包</option>
-                            </select>
-                        </div>
+					<!-- rx,rxm,ry,rym -->
+					<div class="angle parameter_group">
+                        <p class="from_big_title">視角(可不填):</p>
+						<div id="angle_layer">
+							<div>
+								<p class="from_sm_title">垂直大於(rx)</p>
+								<input class="input" type="text" id="input_rx" onkeyup="value=value.replace(/[^\d\-]/g,'')">
+							</div>
+							<div>
+								<p class="from_sm_title">垂直小於(rxm)</p>
+								<input class="input" type="text" id="input_rxm" onkeyup="value=value.replace(/[^\d\-]/g,'')">
+							</div>
+							<div>
+								<p class="from_sm_title">水平大於(ry)</p>
+								<input class="input" type="text" id="input_ry" onkeyup="value=value.replace(/[^\d\-]/g,'')">
+							</div>
+							<div>
+								<p class="from_sm_title">水平小於(rym)</p>
+								<input class="input" type="text" id="input_rym" onkeyup="value=value.replace(/[^\d\-]/g,'')">
+							</div>
+						</div>
+                    </div>
+					<!-- l,lm -->
+					<div class="lv parameter_group">
+                        <p class="from_big_title">等級(可不填):</p>
+						<div id="lv_layer">
+							<div>
+								<p class="from_sm_title">等級大於(lm)</p>
+								<input class="input" type="text" id="input_lm" onkeyup="value=value.replace(/[^\d]/g,'')">
+							</div>
+							<div>
+								<p class="from_sm_title">等級小於(l)</p>
+								<input class="input" type="text" id="input_l" onkeyup="value=value.replace(/[^\d]/g,'')">
+							</div>
+						</div>
                     </div>
                 </div>
                 <div class="out_from">
                     <div class="action">
                         <input type="button" value="生成" class="buttom" onclick="generate()">
                         <input type="button" value="複製" class="buttom" onclick="copy('cmd_text')">
-                        <input type="button" value="清空" class="buttom" onclick="location.href='command_maker_item_nbt.html'">
+                        <input type="button" value="清空" class="buttom" onclick="location.href='command_maker_entity_filter.html'">
                     </div>
                     <div class="command">
                         <p class="from_big_title">NBT:</p>
