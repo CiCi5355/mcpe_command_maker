@@ -11,9 +11,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Changa:wght@300&family=Noto+Sans+TC&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
         <link rel="icon" href="pictures/page_icon.ico">
+        <script src="command_maker_js/setting.js"></script>
         <title>MCPE指令生成器</title>
     </head>
-    <body>
+    <body onload="loaded()">
         <header>
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container">
@@ -42,9 +43,9 @@
         <div class="jumbotron">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="Noto-Sans-TC">MCPE 指令生成器</h1>
-                            <p class="lead Noto-Sans-TC">為創作者而生</p>
+                    <div class="col-md-12" id="ad_board">
+                        <h1 class="Noto-Sans-TC" id="title">MCPE 指令生成器</h1>
+                        <p class="lead Noto-Sans-TC" id="subtitle">為創作者而生</p>
                     </div>
                 </div>
             </div>
