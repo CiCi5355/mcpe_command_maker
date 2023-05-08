@@ -4,7 +4,8 @@ const data = {
     subtitles: ["(´◓Д◔`)", "(*´∀`)~♥", "(´-ι_-｀)",
                 "Σヽ(ﾟД ﾟ; )ﾉ", "(☍﹏⁰。)", "(ﾟ3ﾟ)～♪",
                 "(΄◞ิ౪◟ิ‵)", "（ﾟДﾟ）σ弌弌弌弌弌弌弌弌弌弌弌弌弌弌弌弌弌弌弌弌⊃"
-    ]
+    ],
+    titleDelay: 70
 }
 
 let lastNumber = 1;
@@ -28,15 +29,15 @@ function loaded(){
     //廣告板主標題動態
     const titleRun = window.setInterval(() => {
         for(let a = 0;a < titles.length;a++){
-            if(a == titleRunNumber){
-                document.getElementById(`title${a}`).style.color = "rgb(255, 0 ,0)";
+            if(a <= titleRunNumber){
+                document.getElementById(`title${a}`).style.color = `rgb(${255 - ((titleRunNumber - a) * 10)}, ${255 - ((titleRunNumber - a) * 10)} ,0)`;
             }else{
                 document.getElementById(`title${a}`).style.color = "rgb(0, 0 ,0)";
             }
         }
         titleRunNumber++;
-        if(titleRunNumber > (titles.length - 1)) titleRunNumber = 0;
-    }, 100)
+        if(titleRunNumber > ((titles.length - 1) + data.titleDelay)) titleRunNumber = 0;
+    }, 25)
 
     //廣告板副標題動態
     const subtitleRun = window.setInterval(() => {
