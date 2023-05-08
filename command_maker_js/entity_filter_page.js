@@ -6,14 +6,70 @@ const gameMode = {
 	
 }
 
+function reset(){
+    document.getElementById("common_layer").style.display = 'none';
+    document.getElementById("location_layer").style.display = 'none';
+    document.getElementById("spatial_range_layer").style.display = 'none';
+    document.getElementById("distance_layer").style.display = 'none';
+    document.getElementById("angle_layer").style.display = 'none';
+    document.getElementById("lv_layer").style.display = 'none';
+
+    return true;
+}
+
 //參數層展開
 function common_layer_display(){
 	let target_layer = document.getElementById("common_layer");
 	let display_switch = document.getElementById("common_layer_display").checked;
 	if(display_switch){
-		target_layer.style.visibility = "visible";
+		target_layer.style.display = '';
 	}else{
-		target_layer.style.visibility = "hidden";
+		target_layer.style.display = 'none';
+	}
+}
+function location_layer_display(){
+	let target_layer = document.getElementById("location_layer");
+	let display_switch = document.getElementById("location_layer_display").checked;
+	if(display_switch){
+		target_layer.style.display = '';
+	}else{
+		target_layer.style.display = 'none';
+	}
+}
+function spatial_range_layer_display(){
+	let target_layer = document.getElementById("spatial_range_layer");
+	let display_switch = document.getElementById("spatial_range_layer_display").checked;
+	if(display_switch){
+		target_layer.style.display = '';
+	}else{
+		target_layer.style.display = 'none';
+	}
+}
+function distance_layer_display(){
+	let target_layer = document.getElementById("distance_layer");
+	let display_switch = document.getElementById("distance_layer_display").checked;
+	if(display_switch){
+		target_layer.style.display = '';
+	}else{
+		target_layer.style.display = 'none';
+	}
+}
+function angle_layer_display(){
+	let target_layer = document.getElementById("angle_layer");
+	let display_switch = document.getElementById("angle_layer_display").checked;
+	if(display_switch){
+		target_layer.style.display = '';
+	}else{
+		target_layer.style.display = 'none';
+	}
+}
+function lv_layer_display(){
+	let target_layer = document.getElementById("lv_layer");
+	let display_switch = document.getElementById("lv_layer_display").checked;
+	if(display_switch){
+		target_layer.style.display = '';
+	}else{
+		target_layer.style.display = 'none';
 	}
 }
 

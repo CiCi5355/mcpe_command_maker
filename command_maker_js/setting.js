@@ -49,4 +49,6 @@ function loaded(){
         let text = data.subtitle + "     " + data.subtitles[number];
         document.getElementById("subtitle").innerHTML =  text;
     }, 1000)
+
+    return true;
 }

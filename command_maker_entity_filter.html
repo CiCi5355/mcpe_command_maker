@@ -15,7 +15,7 @@
 		<script src="command_maker_js/setting.js"></script>
         <title>功能生成 => 目標選擇器</title>
     </head>
-    <body onload="loaded()">
+    <body onload="loaded() && reset()">
         <header>
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container">
@@ -73,7 +73,7 @@
 					<!-- tag,name,family -->
 					<div class="common parameter_group">
 						<input type="checkbox" id="common_layer_display" value="no" onclick="common_layer_display()" class="check_box">
-                        <p class="from_big_title" style="display: inline;">常用參數(可不填):</p>
+                        <p class="from_big_title" style="display: inline;">常用參數:</p>
 						<div id="common_layer">
 							<div>
 								<p class="from_sm_title">名稱(name)</p>
@@ -106,7 +106,8 @@
                     </div>
 					<!-- xyz -->
 					<div class="location parameter_group">
-                        <p class="from_big_title">位置(可不填):</p>
+						<input type="checkbox" id="location_layer_display" value="no" onclick="location_layer_display()" class="check_box">
+                        <p class="from_big_title" style="display: inline;">位置:</p>
 						<div id="location_layer">
 							<div>
 								<p class="from_sm_title">X(x)</p>
@@ -124,7 +125,8 @@
                     </div>
 					<!-- dx,dy,dz -->
 					<div class="spatial_range parameter_group">
-                        <p class="from_big_title">空間範圍(可不填):</p>
+						<input type="checkbox" id="spatial_range_layer_display" value="no" onclick="spatial_range_layer_display()" class="check_box">
+                        <p class="from_big_title" style="display: inline;">空間範圍:</p>
 						<div id="spatial_range_layer">
 							<div>
 								<p class="from_sm_title">X延伸(dx)</p>
@@ -142,7 +144,8 @@
                     </div>
 					<!-- r,rm -->
                     <div class="distance parameter_group">
-                        <p class="from_big_title">距離(可不填):</p>
+						<input type="checkbox" id="distance_layer_display" value="no" onclick="distance_layer_display()" class="check_box">
+                        <p class="from_big_title" style="display: inline;">距離:</p>
 						<div id="distance_layer">
 							<div>
 								<p class="from_sm_title">半徑內(r)</p>
@@ -156,7 +159,8 @@
                     </div>
 					<!-- rx,rxm,ry,rym -->
 					<div class="angle parameter_group">
-                        <p class="from_big_title">視角(可不填):</p>
+						<input type="checkbox" id="angle_layer_display" value="no" onclick="angle_layer_display()" class="check_box">
+                        <p class="from_big_title" style="display: inline;">視角:</p>
 						<div id="angle_layer">
 							<div>
 								<p class="from_sm_title">垂直大於(rx)</p>
@@ -178,7 +182,8 @@
                     </div>
 					<!-- l,lm -->
 					<div class="lv parameter_group">
-                        <p class="from_big_title">等級(可不填):</p>
+						<input type="checkbox" id="lv_layer_display" value="no" onclick="lv_layer_display()" class="check_box">
+                        <p class="from_big_title" style="display: inline;">等級:</p>
 						<div id="lv_layer">
 							<div>
 								<p class="from_sm_title">等級大於(lm)</p>
@@ -199,7 +204,7 @@
                     </div>
                     <div class="command">
                         <p class="from_big_title">NBT:</p>
-                        <p class="cmd_text" id="cmd_text">{}</p>
+                        <p class="cmd_text" id="cmd_text">@e</p>
                     </div>
                 </div>
             </div>
